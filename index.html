@@ -52,15 +52,15 @@
   <script>
     // Cấu hình Firebase
     const firebaseConfig = {
-  apiKey: "AIzaSyAshB-qs-kaw_KmAU9K2ruz8VJh2Pq-41c",
-  authDomain: "yhctdy3.firebaseapp.com",
-  databaseURL: "https://yhctdy3-default-rtdb.firebaseio.com",
-  projectId: "yhctdy3",
-  storageBucket: "yhctdy3.firebasestorage.app",
-  messagingSenderId: "502523671175",
-  appId: "1:502523671175:web:62a812330f88ad413a3e22",
-  measurementId: "G-L6L961Y9ZY"
-};
+      apiKey: "AIzaSyAshB-qs-kaw_KmAU9K2ruz8VJh2Pq-41c",
+      authDomain: "yhctdy3.firebaseapp.com",
+      databaseURL: "https://yhctdy3-default-rtdb.firebaseio.com",
+      projectId: "yhctdy3",
+      storageBucket: "yhctdy3.firebasestorage.app",
+      messagingSenderId: "502523671175",
+      appId: "1:502523671175:web:62a812330f88ad413a3e22",
+      measurementId: "G-L6L961Y9ZY"
+    };
 
     // Khởi tạo Firebase
     const app = firebase.initializeApp(firebaseConfig);
@@ -126,7 +126,7 @@
       bedNamesRef.child(bedId).on("value", (snapshot) => {
         const nameData = snapshot.val();
         const nameInput = document.getElementById(`name-${bedId}`);
-        nameInput.value = nameData || bedId; // Mặc định nếu chưa có tên
+        nameInput.value = nameData || bedId; // Hiển thị tên đã lưu hoặc mặc định
       });
 
       // Lắng nghe thay đổi trạng thái giường từ Firebase
@@ -160,7 +160,7 @@
       const nameInput = document.getElementById(`name-${bedId}`);
       const newName = nameInput.value.trim();
       if (newName) {
-        bedNamesRef.child(bedId).set(newName); // Lưu tên vào bedNames
+        bedNamesRef.child(bedId).set(newName); // Lưu tên mới nhất vào bedNames
       }
     }
 
